@@ -1,2 +1,2 @@
-# docker-kito-debian-git
-docker-kito-debian-git
+# docker-debian-git
+docker-debian-git
