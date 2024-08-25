@@ -11,18 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install latest docker-compose
-      uses: TheKitoInc/gh-action-install-docker-compose@main
-
-      - name: Check docker-compose version
-      run: docker-compose --version
-
-
       - name: Checkout the code
         uses: actions/checkout@v4
 
-      - name: Build the Docker image
-        run: |
-          export COMPOSE_EXPERIMENTAL_GIT_REMOTE=1
-          docker-compose version
-          docker-compose build
+      - name: GH-ACTION-DOCKER-COMPOSE-BUILD
+        uses: TheKitoInc/gh-action-docker-compose-build@main
