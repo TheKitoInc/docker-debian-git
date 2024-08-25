@@ -11,11 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Upgrade docker-compose
-        run: |
-          wget "https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64"
-          chmod +x docker-compose-linux-x86_64
-          mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
+      - name: Install latest docker-compose
+      uses: TheKitoInc/gh-action-install-docker-compose@main
+
+      - name: Check docker-compose version
+      run: docker-compose --version
+
 
       - name: Checkout the code
         uses: actions/checkout@v4
